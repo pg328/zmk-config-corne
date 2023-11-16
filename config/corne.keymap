@@ -16,6 +16,11 @@
             bindings = <&kp SPACE>;
             key-positions = <38 39>;
         };
+
+        caps {
+            bindings = <&kp CAPS>;
+            key-positions = <1 2 3>;
+        };
     };
 
     keymap {
