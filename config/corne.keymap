@@ -95,5 +95,25 @@
 
             label = "Functions and System";
         };
+
+        shifted_clusters {
+            bindings = <
+&none  &none  &none  &none  &none  &none       &none      &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none       &none      &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none       &none      &none  &none  &none  &none  &none
+                     &none  &none  &kp LGUI    &kp LCTRL  &none  &none
+            >;
+
+            label = "Clusters outside of the base layer";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        ModCluster {
+            if-layers = <1 2 3>;
+            then-layer = <4>;
+        };
     };
 };
