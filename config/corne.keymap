@@ -25,6 +25,18 @@
         };
     };
 
+    behaviors {
+        hold_tap: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            hold-trigger-key-positions = <36>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -75,10 +87,10 @@
 
         fn {
             bindings = <
-&none  &none         &bt BT_PRV    &bt BT_CLR    &bt BT_NXT    &none           &kp F12    &kp F7  &kp F8    &kp F9  &kp DEL    &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F10    &kp F4  &kp F5    &kp F6  &kp ENTER  &none
-&none  &none         &none         &none         &none         &none           &kp F11    &kp F1  &kp F2    &kp F3  &kp RSHFT  &none
-                                   &kp LCTRL     &none         &kp LGUI        &kp LCTRL  &none   &kp LALT
+&none  &none         &bt BT_PRV    &bt BT_CLR    &bt BT_NXT    &none           &kp F12                &kp F7  &kp F8    &kp F9  &kp DEL    &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F10                &kp F4  &kp F5    &kp F6  &kp ENTER  &none
+&none  &none         &none         &none         &none         &none           &kp F11                &kp F1  &kp F2    &kp F3  &kp RSHFT  &none
+                                   &kp LCTRL     &none         &kp LGUI        &hold_tap LCTRL SPACE  &none   &kp LALT
             >;
 
             label = "Functions and System";
